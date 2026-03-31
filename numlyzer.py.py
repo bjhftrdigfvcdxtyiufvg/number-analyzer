@@ -1,6 +1,11 @@
+import numpy as np
 type=["Prime","Odd","Even","Armstrong","Perfect square","Palindrome","natural number","whole number","perfect number","Strong number"]
-print("enter a number")
-number=int(input())
+print("1.Analyze your number" )
+command=input()
+def multiple(n):
+   numbers=np.arange(1,n+1)
+   factor=numbers[n%numbers==0]
+   print(factor)
 def digits(n): 
     dig=[]
     while n>0:
@@ -46,15 +51,23 @@ def palindrome(n):
          return (True)
        else:
          return(False)
+if command=="Analyze":
+    print("enter your number")
+    number=int(input())
+    if prime(number)==True:
+     print(type[0])
+    if  armstrong(number)==True:
+     print(type[3])
+    if perfectSquare(number)==True:
+     print(type[4])    
+    if palindrome(number)==True:
+     print(type[5])
+    multiple(number)
+    
+    
+       
+    
 
-if prime(number)==True:
-    print(type[0])
-if  armstrong(number)==True:
-    print(type[3])
-if perfectSquare(number)==True:
-    print(type[4])    
-if palindrome(number)==True:
-    print(type[5])
 
 
 
